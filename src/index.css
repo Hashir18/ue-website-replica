@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* UeCampus Design System — purple academic brand */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Brand purple */
+    --primary: 271 76% 32%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 271 70% 55%;
+
+    --secondary: 270 30% 96%;
+    --secondary-foreground: 271 76% 32%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 271 76% 95%;
+    --accent-foreground: 271 76% 32%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 271 76% 32%;
+
+    --radius: 0.75rem;
+
+    /* Dark navy section background (used on home) */
+    --section-dark: 217 33% 17%;
+    --section-dark-foreground: 0 0% 100%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(271 76% 32%), hsl(271 70% 50%));
+    --gradient-hero-overlay: linear-gradient(135deg, hsl(271 76% 32% / 0.85), hsl(271 60% 25% / 0.9));
+    --gradient-card-purple: linear-gradient(135deg, hsl(271 70% 45%), hsl(271 76% 32%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(271 76% 32% / 0.15);
+    --shadow-card: 0 10px 30px -10px hsl(271 76% 32% / 0.25);
+    --shadow-pill: 0 6px 20px -6px hsl(271 76% 32% / 0.5);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 217 33% 12%;
+    --foreground: 0 0% 98%;
+    --card: 217 33% 17%;
+    --card-foreground: 0 0% 98%;
+    --popover: 217 33% 17%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 271 70% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 33% 22%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 217 33% 22%;
+    --muted-foreground: 220 9% 70%;
+    --accent: 271 70% 55%;
+    --accent-foreground: 0 0% 100%;
+    --border: 217 33% 22%;
+    --input: 217 33% 22%;
+    --ring: 271 70% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, sans-serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .bg-section-dark {
+    background-color: hsl(var(--section-dark));
+    color: hsl(var(--section-dark-foreground));
+  }
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+  .bg-gradient-card-purple {
+    background-image: var(--gradient-card-purple);
+  }
+  .shadow-pill {
+    box-shadow: var(--shadow-pill);
+  }
+  .shadow-card-soft {
+    box-shadow: var(--shadow-card);
+  }
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
